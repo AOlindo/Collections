@@ -37,15 +37,57 @@ A interface Set representa uma coleção que não permite elementos duplicados e
 Exemplo:
 ```java
 import java.util.HashSet.
+public class Convidado {
+	private String nome;
+	private int codigoConvite;
+
+	public Convidado(String nome, int codigoConvite) {
+		this.nome = nome;
+		this.codigoConvite = codigoConvite;
+	}
+	public String getNome() {
+		return nome;
+	}
+	public int getCodigoConvite() {
+		return codigoConvite;
+	}
+	@Override
+	public int hashCode() {
+		return Objects.hash(codigoConvite);
+	}
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		Convidado other = (Convidado) obj;
+		return codigoConvite == other.codigoConvite;
+	}
+	@Override
+	public String toString() {
+		StringBuilder builder = new StringBuilder();
+		builder.append("Convidados [nome = ");
+		builder.append(nome);
+		builder.append(", codigoConvite = ");
+		builder.append(codigoConvite);
+		builder.append("]");
+		return builder.toString();
+	}
+
+public static void main(String[] args) {
 
 Set<Convidado> convidados = new HashSet<>();
-convidados.add(1);
-convidados.add(2);
-convidados.add(3);
-convidados.add(2); // Não será adicionado, pois o conjunto não permite duplicatas
-
+convidados.add(new Convidado("Alice", 1));
+convidados.add(new Convidado("Bob", 2));
+convidados.add(new Convidado("Carol", 2)); //Não será adicionado, pois o conjunto não permite codigoConvite duplicato;
+		
 for (Convidado convidadosSet : convidados) {
     System.out.println(convidadosSet);
+}
+
 }
 ````
 ## Map
