@@ -17,17 +17,18 @@ public class Tarefa {
 	public String getDescricao() {
 		return descricao;
 	}
+}
 
 public static void main(String[] args) {
 
-List<Tarefa> tarefas = new ArrayList<>();
-tarefas.add(new Tarefa("Estudar List"));
-tarefas.add(new Tarefa("Estudar Set"));
-tarefas.add(new Tarefa("Estudar Map"));
+	List<Tarefa> tarefas = new ArrayList<>();
+	tarefas.add(new Tarefa("Estudar List"));
+	tarefas.add(new Tarefa("Estudar Set"));
+	tarefas.add(new Tarefa("Estudar Map"));
 
-for (Tarefa tarefasList : tarefas) {
-    System.out.println(tarefasList.getDescricao());
-}
+	for (Tarefa tarefasList : tarefas) {
+	     System.out.println(tarefasList.getDescricao());
+	}
 
 }
 ````
@@ -76,17 +77,18 @@ public class Convidado {
 		builder.append("]");
 		return builder.toString();
 	}
+}
 
 public static void main(String[] args) {
 
-Set<Convidado> convidados = new HashSet<>();
-convidados.add(new Convidado("Alice", 1));
-convidados.add(new Convidado("Bob", 2));
-convidados.add(new Convidado("Carol", 2)); //Não será adicionado, pois o conjunto não permite codigoConvite duplicato;
+	Set<Convidado> convidados = new HashSet<>();
+	convidados.add(new Convidado("Alice", 1));
+	convidados.add(new Convidado("Bob", 2));
+	convidados.add(new Convidado("Carol", 2)); //Não será adicionado, pois o conjunto não permite codigoConvite duplicato;
 		
-for (Convidado convidadosSet : convidados) {
-    System.out.println(convidadosSet);
-}
+	for (Convidado convidadosSet : convidados) {
+             System.out.println(convidadosSet);
+	}
 
 }
 ````
@@ -97,9 +99,13 @@ Exemplo:
 ```java
 import java.util.HashMap;
 
-Map<String, Integer> agendaContatoMap = new HashMap<>();
-agendaContatoMap.put("Alice", 123456789);
-agendaContatoMap.put("Bob", 987654321);
-agendaContatoMap.put("Carol", 1122334455);
+public static void main(String[] args) {
 
-System.out.println(agendaContatoMap.get("Bob")); // Saída: 987654321
+	Map<String, Integer> agendaContatoMap = new HashMap<>();
+	agendaContatoMap.put("Alice", 123456789);
+	agendaContatoMap.put("Bob", 987654321);
+	agendaContatoMap.put("Carol", 1122334455);
+
+	System.out.println(agendaContatoMap.get("Bob")); // Saída: 987654321
+
+}
