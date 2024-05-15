@@ -6,16 +6,29 @@ As coleções em Java são estruturas de dados que permitem armazenar e manipula
 A interface List é uma coleção ordenada que permite elementos duplicados. Os elementos em uma lista são acessados por meio de um índice baseado em zero. Algumas implementações comuns da interface List são ArrayList, LinkedList e Vector.
 
 Exemplo:
-```java 
+```java
 import java.util.ArrayList;
+public class Tarefa {
+	private String descricao;
+
+	public Tarefa(String descricao) {
+		this.descricao = descricao;
+	}
+	public String getDescricao() {
+		return descricao;
+	}
+
+public static void main(String[] args) {
 
 List<Tarefa> tarefas = new ArrayList<>();
-tarefas.add("Estudar List");
-tarefas.add("Estudar Set");
-tarefas.add("Estudar Map");
+tarefas.add(new Tarefa("Estudar List"));
+tarefas.add(new Tarefa("Estudar Set"));
+tarefas.add(new Tarefa("Estudar Map"));
 
 for (Tarefa tarefasList : tarefas) {
-    System.out.println(tarefasList);
+    System.out.println(tarefasList.getDescricao());
+}
+
 }
 ````
 ## Set
